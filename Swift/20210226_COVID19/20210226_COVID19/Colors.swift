@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 //
 //  File.swift
 //  20210226_COVID19
@@ -13,3 +14,14 @@ struct Colors {
 }
 
 
+||||||| 9a239c8
+=======
+//
+//  File.swift
+//  20210226_COVID19
+//
+//  Created by 佐藤省吾 on 2021/02/26.
+//
+
+import Foundation
+>>>>>>> 51009e7aba2efb8a90903b1167095783003b0770
