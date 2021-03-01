@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  20210226_COVID19
+//  20210301_COVID19
 //
-//  Created by 佐藤省吾 on 2021/02/26.
+//  Created by 佐藤省吾 on 2021/03/01.
 //
 
 import UIKit

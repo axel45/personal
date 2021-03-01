@@ -1,14 +1,14 @@
 //
-//  _0210226_COVID19Tests.swift
-//  20210226_COVID19Tests
+//  _0210301_COVID19Tests.swift
+//  20210301_COVID19Tests
 //
-//  Created by 佐藤省吾 on 2021/02/26.
+//  Created by 佐藤省吾 on 2021/03/01.
 //
 
 import XCTest
-@testable import _0210226_COVID19
+@testable import _0210301_COVID19
 
-class _0210226_COVID19Tests: XCTestCase {
+class _0210301_COVID19Tests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
