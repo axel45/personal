@@ -61,9 +61,9 @@ class ViewController: UIViewController {
             imageView.frame = CGRect(x: self.view.frame.size.width - 100, y: -65, width: 50, height: 50)
             imageView.transform = CGAffineTransform(rotationAngle: -90)
         }, completion: nil)
+        setUpImageButton("chat", x: view.frame.size.width - 50).addTarget(self, action: #selector(chatAction), for: .touchDown)
+        setUpImageButton("reload", x: 10).addTarget(self, action: #selector(reloadAction), for: .touchDown)
     }
-    
-    
     
     func setUpImageButton(_ name: String, x: CGFloat) -> UIButton {
         let button = UIButton(type: .system)
@@ -80,7 +80,8 @@ class ViewController: UIViewController {
     }
     
     @objc func reloadAction() {
-        print("タップchat")
+        loadView()
+        viewDidLoad()
     }
     
     func setUpButton(_ title: String, size: CGSize, y: CGFloat, color: UIColor, parentView: UIView) {

@@ -16,6 +16,8 @@
 		617F827A25EC665000F16DDE /* _0210301_COVID19Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617F827925EC665000F16DDE /* _0210301_COVID19Tests.swift */; };
 		617F828525EC665000F16DDE /* _0210301_COVID19UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617F828425EC665000F16DDE /* _0210301_COVID19UITests.swift */; };
 		617F829625EC666900F16DDE /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617F829525EC666900F16DDE /* Colors.swift */; };
+		61D6EF8525F4738E003B44F9 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D6EF8425F4738E003B44F9 /* Entity.swift */; };
+		61D6EF8A25F48105003B44F9 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D6EF8925F48105003B44F9 /* API.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		617F828425EC665000F16DDE /* _0210301_COVID19UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _0210301_COVID19UITests.swift; sourceTree = "<group>"; };
 		617F828625EC665000F16DDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		617F829525EC666900F16DDE /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		61D6EF8425F4738E003B44F9 /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
+		61D6EF8925F48105003B44F9 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +108,8 @@
 				617F826225EC664D00F16DDE /* AppDelegate.swift */,
 				617F826425EC664D00F16DDE /* SceneDelegate.swift */,
 				617F826625EC664D00F16DDE /* ViewController.swift */,
+				61D6EF8425F4738E003B44F9 /* Entity.swift */,
+				61D6EF8925F48105003B44F9 /* API.swift */,
 				617F829525EC666900F16DDE /* Colors.swift */,
 				617F826825EC664D00F16DDE /* Main.storyboard */,
 				617F826B25EC665000F16DDE /* Assets.xcassets */,
@@ -262,8 +268,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				617F826725EC664D00F16DDE /* ViewController.swift in Sources */,
+				61D6EF8525F4738E003B44F9 /* Entity.swift in Sources */,
 				617F829625EC666900F16DDE /* Colors.swift in Sources */,
 				617F826325EC664D00F16DDE /* AppDelegate.swift in Sources */,
+				61D6EF8A25F48105003B44F9 /* API.swift in Sources */,
 				617F826525EC664D00F16DDE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
