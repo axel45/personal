@@ -12,9 +12,9 @@ struct CovidInfo: Codable {
     struct Total: Codable {
         var pcr: Int
         var positive: Int
-        var hispitalize: Int
-        var servern: Int
+        var hospitalize: Int
+        var severe: Int
         var death: Int
-        var dischanger: Int
+        var discharge: Int
     }
 }
