@@ -47,8 +47,8 @@ class ViewController: UIViewController {
         setUpLabel("死者数", size: size, centerX: leftX, y: 220, font: labelFont, color: color, contentView)
         setUpLabel("退院者数", size: size, centerX: rightX, y: 220, font: labelFont, color: color, contentView)
         let height = view.frame.size.height / 2
-        setUpButton("健康管理", size: size, y: height + 190, color: colors.blue, parentView: view)
-        setUpButton("県別状況", size: size, y: height + 240, color: colors.blue, parentView: view)
+        setUpButton("健康管理", size: size, y: height + 190, color: colors.blue, parentView: view).addTarget(self, action: #selector(goHealthCheck), for: .touchDown)
+        setUpButton("県別状況", size: size, y: height + 240, color: colors.blue, parentView: view).addTarget(self, action: #selector(goChart), for: .touchDown)
         setUpImageButton("chat", x: view.frame.size.width - 50).addTarget(self, action: #selector(chatAction), for: .touchDown)
         setUpImageButton("reload", x: 10).addTarget(self, action: #selector(reloadAction), for: .touchDown)
         
@@ -75,7 +75,7 @@ class ViewController: UIViewController {
         
         let size = CGSize(width: 200, height: 40)
         let leftX = view.frame.size.width * 0.38
-        let rightX = view.frame.size.width * 0.05
+        let rightX = view.frame.size.width * 0.85
         let font = UIFont.systemFont(ofSize: 35, weight: .heavy)
         let color = colors.blue
         
@@ -98,8 +98,7 @@ class ViewController: UIViewController {
         })
     }
     
-    func setUpAPILabel(_ labe: UILabel, size: CGSize, centerX: CGFloat, y: CGFloat, font: UIFont, color: UIColor, _ parentView: UIView) {
-        let label = UILabel()
+    func setUpAPILabel(_ label: UILabel, size: CGSize, centerX: CGFloat, y: CGFloat, font: UIFont, color: UIColor, _ parentView: UIView) {
         label.frame.size = size
         label.center.x = centerX
         label.frame.origin.y = y
@@ -119,7 +118,7 @@ class ViewController: UIViewController {
     }
     
     @objc func chatAction() {
-        print("タップchat")
+        performSegue(withIdentifier: "goChat", sender: nil)
     }
     
     @objc func reloadAction() {
@@ -127,7 +126,15 @@ class ViewController: UIViewController {
         viewDidLoad()
     }
     
-    func setUpButton(_ title: String, size: CGSize, y: CGFloat, color: UIColor, parentView: UIView) {
+    @objc func goHealthCheck() {
+        performSegue(withIdentifier: "goHealthCheck", sender: nil)
+    }
+    
+    @objc func goChart() {
+        performSegue(withIdentifier: "goChart", sender: nil)
+    }
+    
+    func setUpButton(_ title: String, size: CGSize, y: CGFloat, color: UIColor, parentView: UIView) -> UIButton {
         let button = UIButton(type: .system)
         button.setTitle(title, for: .normal)
         button.frame.size = size
@@ -137,6 +144,7 @@ class ViewController: UIViewController {
         button.frame.origin.y = y
         button.setTitleColor(color, for: .normal)
         parentView.addSubview(button)
+        return button
     }
     
     func setUpLabel(_ text: String, size: CGSize, centerX: CGFloat, y: CGFloat, font: UIFont, color: UIColor, _ parentView: UIView) {

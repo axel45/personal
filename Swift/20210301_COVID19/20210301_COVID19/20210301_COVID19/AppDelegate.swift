@@ -6,14 +6,32 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseFirestore
 
-@main
+@UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        // Override point for cus omization after application launch.
+        FirebaseApp.configure()
+        Firestore.firestore().collection("users").document("Message").setData([
+             "UserMessage": "message",
+             "Data": "messageData",
+             "UserId": "messageId"
+        ],merge: false) { err in
+            if let err = err {
+                print("Error writing document: \(err)")
+            } else {
+                print("Document successfully written!")
+            }
+        }
+        
+        CovidAPI.getPrefecture(completion: {(result: [CovidInfo.Prefecture]) -> Void in
+            CovidSingleton.shared.prefecture = result
+        })
         return true
     }
 
