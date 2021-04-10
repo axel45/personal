@@ -346,6 +346,7 @@ PODS:
     - nanopb/encode (= 1.30906.0)
   - nanopb/decode (1.30906.0)
   - nanopb/encode (1.30906.0)
+  - PKHUD (5.3.0)
   - PromisesObjC (1.2.12)
 
 DEPENDENCIES:
@@ -360,6 +361,7 @@ DEPENDENCIES:
   - FSCalendar
   - MessageInputBar
   - MessageKit
+  - PKHUD
 
 SPEC REPOS:
   trunk:
@@ -387,6 +389,7 @@ SPEC REPOS:
     - MessageInputBar
     - MessageKit
     - nanopb
+    - PKHUD
     - PromisesObjC
 
 SPEC CHECKSUMS:
@@ -414,8 +417,9 @@ SPEC CHECKSUMS:
   MessageInputBar: e81c7535347f1f7b923de7080409a535a004b6e4
   MessageKit: a8efaf55b021672b19ffdd5a85ce1c2f3b53058e
   nanopb: 59317e09cf1f1a0af72f12af412d54edf52603fc
+  PKHUD: 98f3e4bc904b9c916f1c5bb6d765365b5357291b
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
 
-PODFILE CHECKSUM: 7391ee8267d3f8d668dd7190d2c65241ef5601f1
+PODFILE CHECKSUM: 82a60c6c976ff67cfa81641a3b01eda03defec7e
 
 COCOAPODS: 1.10.1

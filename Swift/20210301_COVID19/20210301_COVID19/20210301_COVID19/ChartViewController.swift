@@ -69,7 +69,7 @@ class ChartViewController: UIViewController {
         view.addSubview(searchBar)
         
         let uiView = UIView()
-        uiView.frame = CGRect(x: 10, y: 480, width: view.frame.size.width - 20, height: 147)
+        uiView.frame = CGRect(x: 10, y: view.frame.size.height - (view.frame.size.height / 5.35), width: view.frame.size.width - 20, height: view.frame.size.height - (view.frame.size.height / 1.225))
         uiView.layer.cornerRadius = 10
         uiView.backgroundColor = .white
         uiView.layer.shadowColor = colors.black.cgColor
@@ -97,7 +97,7 @@ class ChartViewController: UIViewController {
             }
         }
         
-        chartView = HorizontalBarChartView(frame: CGRect(x: 0, y: 150, width: view.frame.size.width, height: 300))
+        chartView = HorizontalBarChartView(frame: CGRect(x: 0, y: 150, width: view.frame.size.width, height: view.frame.size.height - (view.frame.size.height / 2.5)))
         chartView.animate(yAxisDuration: 1.0, easingOption: .easeOutCirc)
         chartView.xAxis.labelCount = 10
         chartView.xAxis.labelTextColor = colors.bluePerple

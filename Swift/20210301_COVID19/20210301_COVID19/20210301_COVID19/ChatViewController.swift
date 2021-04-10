@@ -19,7 +19,7 @@ class ChatViewController: MessagesViewController, MessagesDataSource, MessageCel
     override func viewDidLoad() {
         super.viewDidLoad()
         Firestore.firestore().collection("Messages").document().setData([
-            "data": Date(),
+            "date": Date(),
             "senderId": "testId",
             "text": "testText",
             "userName": "testName"
@@ -32,7 +32,7 @@ class ChatViewController: MessagesViewController, MessagesDataSource, MessageCel
                 if let document = document {
                     for i in 0..<document.count {
                         var storeData = FirestoreData()
-                        storeData.date = (document.documents[i].get("data")! as! Timestamp).dateValue()
+                        storeData.date = (document.documents[i].get("date")! as! Timestamp).dateValue()
                         storeData.senderId = document.documents[i].get("senderId")! as? String
                         storeData.text = document.documents[i].get("text")! as? String
                         storeData.userName = document.documents[i].get("userName")! as? String
@@ -143,6 +143,10 @@ class ChatViewController: MessagesViewController, MessagesDataSource, MessageCel
         for i in 0..<firestoreData.count {
             messageArray.append(createMessage(text: firestoreData[i].text!, date: firestoreData[i].date!, firestoreData[i].senderId!))
         }
+        messageArray.sort(by: {
+            a, b -> Bool in
+            return a.sentDate < b.sentDate
+        })
         return messageArray
     }
 }

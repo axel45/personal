@@ -20,6 +20,7 @@ target '20210301_COVID19' do
   pod 'FirebaseFirestoreSwift'
   pod 'MessageKit'
   pod 'MessageInputBar'
+  pod 'PKHUD'
 
 
   target '20210301_COVID19Tests' do
