@@ -15,6 +15,7 @@
 		61716CDE262272C9005BBFC8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61716CDC262272C9005BBFC8 /* LaunchScreen.storyboard */; };
 		61716CE9262272C9005BBFC8 /* _0210411_tellAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61716CE8262272C9005BBFC8 /* _0210411_tellAppTests.swift */; };
 		61716CF4262272C9005BBFC8 /* _0210411_tellAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61716CF3262272C9005BBFC8 /* _0210411_tellAppUITests.swift */; };
+		61716D05262292D0005BBFC8 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61716D04262292D0005BBFC8 /* Colors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		61716CEF262272C9005BBFC8 /* 20210411_tellAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 20210411_tellAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		61716CF3262272C9005BBFC8 /* _0210411_tellAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _0210411_tellAppUITests.swift; sourceTree = "<group>"; };
 		61716CF5262272C9005BBFC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		61716D04262292D0005BBFC8 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				61716CD1262272C2005BBFC8 /* AppDelegate.swift */,
 				61716CD3262272C2005BBFC8 /* SceneDelegate.swift */,
 				61716CD5262272C2005BBFC8 /* ViewController.swift */,
+				61716D04262292D0005BBFC8 /* Colors.swift */,
 				61716CD7262272C2005BBFC8 /* Main.storyboard */,
 				61716CDA262272C9005BBFC8 /* Assets.xcassets */,
 				61716CDC262272C9005BBFC8 /* LaunchScreen.storyboard */,
@@ -259,6 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				61716CD6262272C2005BBFC8 /* ViewController.swift in Sources */,
+				61716D05262292D0005BBFC8 /* Colors.swift in Sources */,
 				61716CD2262272C2005BBFC8 /* AppDelegate.swift in Sources */,
 				61716CD4262272C2005BBFC8 /* SceneDelegate.swift in Sources */,
 			);
