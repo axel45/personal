@@ -6,45 +6,54 @@
 //
 
 import UIKit
+// メニューに配置したボタンを押したときの挙動はプロジェクトごとに異なるので、デリゲートを使ってボタンの挙動を他のクラスに委譲できるようにする
+@objc protocol SideMenuDelegate {
+    func onClickButton(sender:UIButton)
+}
 
 class SideMenu: UIView {
-    
+    // デリゲートのインスタンスを作成
+    weak var delegate: SideMenuDelegate?
+    var swipeGesture: UISwipeGestureRecognizer!
+    var leftConstraint: NSLayoutConstraint!
     var clearView: UIView!
-    // 親VCを取り出し
-    let parentVC = self.parentViewController
     let colors = Colors()
+    var parentVC: UIViewController!
+    var isSideMenuhidden: Bool = true
     // サイドメニューのサイズ
-    var size: CGRect
+    var size: CGRect?
     
     // イニシャライザ
     init(image: [UIImage], parentViewController: UIViewController) {
         // bounds of entire screen in points
         self.size = CGRect(x: UIScreen.main.bounds.width, y: 0, width: UIScreen.main.bounds.width * 2, height: UIScreen.main.bounds.height)
-        super.init(frame: size)
+        super.init(frame: size!)
         self.backgroundColor = colors.skin
         self.alpha = 0.8
         self.buttonSet(num: image.count, image: image)
         // 親ViewController を指定
-        //self.parentViewController() = parentViewController
-        
+        self.parentVC = parentViewController
+
         // メニュー以外の場所をタップしたときにメニューを下げる
-        clearView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width * 2/3 , height: UIScreen.main.bounds.width))
-        parentViewController.view.addSubView(clearView)
+        let clearView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width * 2/3 , height: UIScreen.main.bounds.width))
+        clearView.alpha = 1.0
+        parentVC.view.addSubview(clearView)
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.clearViewTapped))
+        tapGesture.numberOfTapsRequired = 1
+        clearView.isHidden = true
+        clearView.addGestureRecognizer(tapGesture)
     }
-    
-    func parentViewController() -> UIViewController? {
-        var parent: UIResponder? = self
-        while let next = parent?.next {
-            if let viewController = next as? UIViewController {
-                return viewController
+        
+    @objc func clearViewTapped() {
+        if isSideMenuhidden == false {
+            if clearView.isHidden == false {
+                UIView.animate(withDuration: 0.8, animations:   {self.frame.origin.x = UIScreen.main.bounds.width}, completion: nil)
             }
-            parent = next
         }
-        return nil
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    required init?(coder: NSCoder) {
+         fatalError("init(coder:) has not been implemented")
     }
     
     //親ビューで指定した画像の数だけボタンを生成、配置
@@ -67,13 +76,15 @@ class SideMenu: UIView {
         }
     }
     
-    @objc internal func onClickButton(sender: UIButton) {
-
+    // デリゲートメソッド　親ビューコントローラーに委譲
+    @objc func onClickButton(sender: UIButton) {
+        self.delegate?.onClickButton(sender: sender)
     }
     
-    func getEdgeGesture(sender: UIScreenEdgePanGestureRecognizer) {
+    public func getEdgeGesture(sender: UIScreenEdgePanGestureRecognizer) {
+        self.translatesAutoresizingMaskIntoConstraints = false
         // 移動量を取得
-        let move:CGPoint = sender.translation(in: parentViewController()!.view)
+        let move:CGPoint = sender.translation(in: parentVC.view)
         // 画面端からの移動量
         self.frame.origin.x += move.x
         // 画面表示を更新
@@ -81,12 +92,12 @@ class SideMenu: UIView {
         
         // ドラッグ終了時の処理
         if(sender.state == UIGestureRecognizer.State.ended) {
-            if(self.frame.origin.x < UIScreen.main.bounds.width - parentViewController()!.view.frame.size.width/4) {
+            if(self.frame.origin.x < UIScreen.main.bounds.width - parentVC.view.frame.size.width/3) {
                 // ドラッグの距離が画面幅の1/3を超えた場合はメニューを出す
                 UIView.animate(withDuration: 0.8, animations: {
                     self.frame.origin.x = UIScreen.main.bounds.width * 2/3
                 }, completion: nil)
-                clearView.isHidden = false
+                isSideMenuhidden = false
             } else {
                 // ドラッグの距離が画面幅の1/3以下の場合はそのままメニューを左に戻す
                 UIView.animate(withDuration: 0.8, animations: {
@@ -95,19 +106,6 @@ class SideMenu: UIView {
             }
         }
         // 移動量をリセット
-        sender.setTranslation(CGPoint.zero, in: parentViewController()!.view)
-    }
-}
-
-extension UIView {
-    var parentViewController: UIViewController? {
-        var parentResponder: UIResponder? = self
-        while parentResponder != nil {
-            parentResponder = parentResponder!.next
-            if let viewController = parentResponder as? UIViewController {
-                return viewController
-            }
-        }
-        return nil
+        sender.setTranslation(CGPoint.zero, in: parentVC.view)
     }
 }
