@@ -16,7 +16,6 @@ class SideMenu: UIView {
     weak var delegate: SideMenuDelegate?
     var swipeGesture: UISwipeGestureRecognizer!
     var leftConstraint: NSLayoutConstraint!
-    var clearView: UIView!
     let colors = Colors()
     var parentVC: UIViewController!
     var isSideMenuhidden: Bool = true
@@ -46,9 +45,8 @@ class SideMenu: UIView {
         
     @objc func clearViewTapped() {
         if isSideMenuhidden == false {
-            if clearView.isHidden == false {
-                UIView.animate(withDuration: 0.8, animations:   {self.frame.origin.x = UIScreen.main.bounds.width}, completion: nil)
-            }
+            isSideMenuhidden = true
+            UIView.animate(withDuration: 0.8, animations: {self.frame.origin.x = UIScreen.main.bounds.width}, completion: nil)
         }
     }
     
