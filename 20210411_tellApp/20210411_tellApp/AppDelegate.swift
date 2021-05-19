@@ -4,16 +4,29 @@
 //
 //  Created by 佐藤省吾 on 2021/04/11.
 //
-
 import UIKit
+import Firebase
 
-@main
+@UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    var window: UIWindow?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        FirebaseApp.configure()
+        Firestore.firestore().collection("users").document("Message").setData([
+            "UserMessage":"message",
+            "Data":"messageData",
+            "UserId":"messageId"
+        ],merge: false) { err in
+            if let err = err {
+                print("Error writing document: \(err)")
+            } else {
+                print("Document successfully written!")
+            }
+        }
         return true
     }
 
