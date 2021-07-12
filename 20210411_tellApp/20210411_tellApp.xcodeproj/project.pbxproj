@@ -9,8 +9,9 @@
 /* Begin PBXBuildFile section */
 		3A7B46F849AA4D797FE7DEBC /* Pods_20210411_tellApp_20210411_tellAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFB42135BF4B9FC488FCC31B /* Pods_20210411_tellApp_20210411_tellAppUITests.framework */; };
 		569213C36DA007156914BE2A /* Pods_20210411_tellApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 002ECB92707DF6D81C351EB1 /* Pods_20210411_tellApp.framework */; };
-		6124DC1D264A56D900533FDE /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6124DC1C264A56D900533FDE /* ChatViewController.swift */; };
 		6124DC2B264A681900533FDE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6124DC2A264A681900533FDE /* GoogleService-Info.plist */; };
+		612EBA442675E781002C131A /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612EBA432675E781002C131A /* ChatViewController.swift */; };
+		614C50A726787A4500591994 /* FirebaseDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614C50A626787A4500591994 /* FirebaseDate.swift */; };
 		61716CD2262272C2005BBFC8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61716CD1262272C2005BBFC8 /* AppDelegate.swift */; };
 		61716CD4262272C2005BBFC8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61716CD3262272C2005BBFC8 /* SceneDelegate.swift */; };
 		61716CD6262272C2005BBFC8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61716CD5262272C2005BBFC8 /* ViewController.swift */; };
@@ -45,8 +46,9 @@
 		002ECB92707DF6D81C351EB1 /* Pods_20210411_tellApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_20210411_tellApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		200453E17881604112407454 /* Pods_20210411_tellAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_20210411_tellAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		202DB0F766814E842758B122 /* Pods-20210411_tellApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-20210411_tellApp.debug.xcconfig"; path = "Target Support Files/Pods-20210411_tellApp/Pods-20210411_tellApp.debug.xcconfig"; sourceTree = "<group>"; };
-		6124DC1C264A56D900533FDE /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		6124DC2A264A681900533FDE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		612EBA432675E781002C131A /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		614C50A626787A4500591994 /* FirebaseDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDate.swift; sourceTree = "<group>"; };
 		61716CCE262272C2005BBFC8 /* 20210411_tellApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 20210411_tellApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		61716CD1262272C2005BBFC8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		61716CD3262272C2005BBFC8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 		61716CC5262272C2005BBFC8 = {
 			isa = PBXGroup;
 			children = (
+				614C50A626787A4500591994 /* FirebaseDate.swift */,
 				61716CD0262272C2005BBFC8 /* 20210411_tellApp */,
 				61716CE7262272C9005BBFC8 /* 20210411_tellAppTests */,
 				61716CF2262272C9005BBFC8 /* 20210411_tellAppUITests */,
@@ -143,7 +146,7 @@
 				61716D192622C164005BBFC8 /* SideMenu.swift */,
 				61716D04262292D0005BBFC8 /* Colors.swift */,
 				61716CD7262272C2005BBFC8 /* Main.storyboard */,
-				6124DC1C264A56D900533FDE /* ChatViewController.swift */,
+				612EBA432675E781002C131A /* ChatViewController.swift */,
 				61716CDA262272C9005BBFC8 /* Assets.xcassets */,
 				61716CDC262272C9005BBFC8 /* LaunchScreen.storyboard */,
 				61716CDF262272C9005BBFC8 /* Info.plist */,
@@ -422,9 +425,10 @@
 				61716CD6262272C2005BBFC8 /* ViewController.swift in Sources */,
 				61716D05262292D0005BBFC8 /* Colors.swift in Sources */,
 				61716D1A2622C164005BBFC8 /* SideMenu.swift in Sources */,
+				612EBA442675E781002C131A /* ChatViewController.swift in Sources */,
 				61716CD2262272C2005BBFC8 /* AppDelegate.swift in Sources */,
-				6124DC1D264A56D900533FDE /* ChatViewController.swift in Sources */,
 				61716CD4262272C2005BBFC8 /* SceneDelegate.swift in Sources */,
+				614C50A726787A4500591994 /* FirebaseDate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -602,6 +606,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = 20210411_tellApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -621,6 +626,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = 20210411_tellApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

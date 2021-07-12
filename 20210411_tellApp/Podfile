@@ -19,6 +19,10 @@ target '20210411_tellApp' do
   pod 'MessageInputBar'
   pod 'PKHUD'
 
+  pod 'WebRTC', '58.17.16937'
+  pod 'Starscream', '~> 2.0.3'
+  pod 'SwiftyJSON'
+
   target '20210411_tellAppTests' do
     inherit! :search_paths
     # Pods for testing

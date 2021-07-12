@@ -20,6 +20,7 @@
                     </view>
                     <connections>
                         <segue destination="if0-cs-bYR" kind="show" identifier="goChat" id="ESq-jJ-A0R"/>
+                        <segue destination="72t-aW-ofg" kind="show" id="4is-Mv-oGW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -41,6 +42,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3zu-yB-WSQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1191" y="68"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="LKU-gP-q5v">
+            <objects>
+                <viewController id="72t-aW-ofg" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QXg-Rp-Xbg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="G8m-jr-UeL"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="guD-be-68U"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eRg-nc-g6u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-126" y="899"/>
         </scene>
     </scenes>
     <resources>
